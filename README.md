@@ -1,16 +1,36 @@
-# React + Vite
+=====================================================================================================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+⏱️ TickTime
 
-Currently, two official plugins are available:
+TickTime adalah aplikasi online timer berbasis web yang memungkinkan pengguna mengatur timer secara mudah, cepat, dan interaktif — lengkap dengan fitur impor file audio untuk dijadikan suara alarm.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dibangun menggunakan React + Vite, TailwindCSS, dan Framer Motion, TickTime berfokus pada pengalaman pengguna yang sederhana namun powerful.
 
-## React Compiler
+=====================================================================================================
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🚀 Fitur Utama:
 
-## Expanding the ESLint configuration
+⭐ 1. Timer Online Interaktif
+- User dapat mengatur waktu (jam, menit, detik)
+- Tampilan timer besar dan jelas
+- Tombol Start, Pause, dan Reset
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🎵 2. Custom Alarm (Impor Audio)
+- Pengguna dapat mengunggah file audio (MP3/WAV)
+- File yang diunggah akan digunakan sebagai alarm
+- Mengatasi keterbatasan alarm bawaan browser
+
+🎛️ 3. Scroll Time Picker (Jam / Menit / Detik)
+- Mengatur waktu tanpa mengetik
+- Menggunakan komponen scroll yang smooth dan intuitif
+
+🎨 4. UI Simpel & Responsif
+- Menggunakan TailwindCSS
+- Animasi smooth dengan Framer Motion
+- Tema minimalis gelap
+
+🧭 5. Navigasi Mudah dengan Dock Component
+- Dock melayang di bagian bawah
+- Akses cepat ke: Home, Timer, About
+
+=====================================================================================================

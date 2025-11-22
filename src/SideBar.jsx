@@ -7,9 +7,9 @@ function SideBar({ setSelectedSound }) {
     };
 
     const [sounds, setSounds] = useState([
-        { name: "Beep", url: "/src/assets/Beep.mp3"},
-        { name: "Fast beep", url: "/src/assets/Fast beep.mp3"},
-        { name: "Digital", url: "/src/assets/Digital.mp3"}
+        { name: "Beep", url: "/public/audio/Beep.mp3"},
+        { name: "Fast beep", url: "/public/audio/Fast beep.mp3"},
+        { name: "Digital", url: "/public/audio/Digital.mp3"}
     ]);
 
     const handleUpload = (e) => {
@@ -84,7 +84,7 @@ function SideBar({ setSelectedSound }) {
                     />
 
                     <div className="flex flex-col justify-center items-center pointer-events-none z-10">
-                        <img src="/src/assets/cloud-computing.png" alt="" className="w-1/3 h-1/3" />
+                        <img src="/public/images/cloud-computing.png" alt="" className="w-1/3 h-1/3" />
                         <span className="text-white">Choose file or drop your file here</span>
                     </div>
                 </div>

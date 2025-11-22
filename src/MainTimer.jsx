@@ -4,6 +4,7 @@ import WhiteButton from "./WhiteButton";
 import Dock from "./Dock";
 import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
+import FadeIn from "./FadeIn";
 
 function MainTimer() {
     const [hours, setHours] = useState(0);
@@ -14,15 +15,15 @@ function MainTimer() {
     const [isRunning, setIsRunning] = useState(false);
 
     const [sounds, setSounds] = useState([
-        { name: "Sound 1", url: "/sounds/sound1.mp3" },
-        { name: "Sound 2", url: "/sounds/sound2.mp3" },
-        { name: "Sound 3", url: "/sounds/sound3.mp3" }
+        { name: "Sound 1", url: "/public/audio/Beep.mp3" },
+        { name: "Sound 2", url: "/public/audio/Fast beep.mp3" },
+        { name: "Sound 3", url: "/public/audio/Digital.mp3" }
     ]);
 
     const [selectedSound, setSelectedSound] = useState(null);
 
     const playAlarm = () => {
-        const audio = new Audio(selectedSound || "src/assets/Beep.mp3");
+        const audio = new Audio(selectedSound || "/public/audio/Beep.mp3");
         audio.play();
     };
 
@@ -102,17 +103,17 @@ function MainTimer() {
 
     const items = [
         {
-            icon: <img src="/src/assets/shuttle.png" alt="" className="w-1/2 h-1/2" />,
+            icon: <img src="/public/images/shuttle.png" alt="" className="w-1/2 h-1/2" />,
             label: 'Get started',
             onClick: () => navigate('/main-timer')
         },
         {
-            icon: <img src="/src/assets/home.png" alt="" className="w-1/2 h-1/2" />,
+            icon: <img src="/public/images/home.png" alt="" className="w-1/2 h-1/2" />,
             label: 'Home',
             onClick: () => navigate('/')
         },
         {
-            icon: <img src="/src/assets/info.png" alt="" className="w-1/2 h-1/2" />,
+            icon: <img src="/public/images/info.png" alt="" className="w-1/2 h-1/2" />,
             label: 'About',
             onClick: () => navigate('/?section=about')
         }
@@ -130,43 +131,49 @@ function MainTimer() {
             </div>
 
             <div className="w-full h-screen bg-black justify-center items-center flex flex-col gap-5">
-                <div className="flex gap-3 items-center text-white mb-3">
-                    <input
-                        type="number"
-                        placeholder="00"
-                        className="w-16 bg-transparent border-b border-gray-400 text-center text-4xl focus:outline-none focus:border-white"
-                        onChange={(e) => setHours(e.target.value)}
-                    />
-                    <span className="text-4xl">:</span>
-                    <input
-                        type="number"
-                        placeholder="00"
-                        className="w-16 bg-transparent border-b border-gray-400 text-center text-4xl focus:outline-none focus:border-white"
-                        onChange={(e) => setMinutes(e.target.value)}
-                    />
-                    <span className="text-4xl">:</span>
-                    <input
-                        type="number"
-                        placeholder="00"
-                        className="w-16 bg-transparent border-b border-gray-400 text-center text-4xl focus:outline-none focus:border-white"
-                        onChange={(e) => setSeconds(e.target.value)}
-                    />
-                </div>
+                <FadeIn delay={0.1}>
+                    <div className="flex gap-3 items-center text-white mb-3">
+                        <input
+                            type="number"
+                            placeholder="00"
+                            className="w-16 bg-transparent border-b border-gray-400 text-center text-4xl focus:outline-none focus:border-white"
+                            onChange={(e) => setHours(e.target.value)}
+                        />
+                        <span className="text-4xl">:</span>
+                        <input
+                            type="number"
+                            placeholder="00"
+                            className="w-16 bg-transparent border-b border-gray-400 text-center text-4xl focus:outline-none focus:border-white"
+                            onChange={(e) => setMinutes(e.target.value)}
+                        />
+                        <span className="text-4xl">:</span>
+                        <input
+                            type="number"
+                            placeholder="00"
+                            className="w-16 bg-transparent border-b border-gray-400 text-center text-4xl focus:outline-none focus:border-white"
+                            onChange={(e) => setSeconds(e.target.value)}
+                        />
+                    </div>
+                </FadeIn>
 
-                <div>
-                    <span className="text-9xl text-white">
-                        {displayTime(timeLeft)}
-                    </span>
-                </div>
-
-                <div className="flex gap-5 mt-5 justify-center">
-                    <Button onClick={handleStart}>Start</Button>
-                    <Button onClick={handlePause}>Pause</Button>
-                    <Button onClick={handleReset}>Reset</Button>
-                    <WhiteButton onClick={() => setShowSidebar(true)}>
-                        Add sound
-                    </WhiteButton>
-                </div>
+                <FadeIn delay={0.3}>
+                    <div>
+                        <span className="text-9xl text-white">
+                            {displayTime(timeLeft)}
+                        </span>
+                    </div>
+                </FadeIn>
+                
+                <FadeIn delay={0.5}>
+                    <div className="flex gap-5 mt-5 justify-center">
+                        <Button onClick={handleStart}>Start</Button>
+                        <Button onClick={handlePause}>Pause</Button>
+                        <Button onClick={handleReset}>Reset</Button>
+                        <WhiteButton onClick={() => setShowSidebar(true)}>
+                            Add sound
+                        </WhiteButton>
+                    </div>
+                </FadeIn>
             </div>
 
             {/* Ini buat Sidebar */}

@@ -10,6 +10,8 @@ import Dock from './Dock.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import FadeInX from './FadeInX.jsx';
+import FadeIn from './FadeIn.jsx';
 
 function Homepage() {
     const navigate = useNavigate();
@@ -33,15 +35,15 @@ function Homepage() {
     }, [location]);
 
     const items = [
-        { icon: <img src="/src/assets/shuttle.png" alt="" className='w-1/2 h-1/2'/>, label: 'Get started', onClick: () => {
+        { icon: <img src="/public/images/shuttle.png" alt="" className='w-1/2 h-1/2'/>, label: 'Get started', onClick: () => {
             handleNavigation('/main-timer');
         }},
-        { icon: <img src="/src/assets/home.png" alt="" className='w-1/2 h-1/2'/>, label: 'Home', onClick: () => {
+        { icon: <img src="/public/images/home.png" alt="" className='w-1/2 h-1/2'/>, label: 'Home', onClick: () => {
             document.getElementById('hero-section').scrollIntoView({
                 behavior: 'smooth',
             });
         }},
-        { icon: <img src="/src/assets/info.png" alt="" className='w-1/2 h-1/2'/>, label: 'About', onClick: () => {
+        { icon: <img src="/public/images/info.png" alt="" className='w-1/2 h-1/2'/>, label: 'About', onClick: () => {
             document.getElementById('about-section').scrollIntoView({
                 behavior: 'smooth',
             });
@@ -70,37 +72,39 @@ function Homepage() {
                     />
                 </div>
                 <div className='absolute flex w-full h-screen justify-between items-center px-20'>
-                    <div className='flex flex-wrap w-full justify-start items-center gap-5'>
-                        <h1 className='text-6xl text-white'>Do your</h1>
-                        <RotatingText
-                        texts={['Homework', 'Study', 'Exercise', 'Activity']}
-                        mainClassName="px-2 sm:px-2 md:px-3 bg-[#9929EA] text-5xl font-bold text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                        staggerFrom={"last"}
-                        initial={{ y: "100%" }}
-                        animate={{ y: 0 }}
-                        exit={{ y: "-120%" }}
-                        staggerDuration={0.025}
-                        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                        transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                        rotationInterval={2000}
-                        />
-                        <h1 className='text-6xl font-bold text-white'>right on time</h1>
-                        <div className='flex gap-5 mt-5'>
-                            <WhiteButton>
-                                <Link to="/main-timer">Get Started</Link>
-                            </WhiteButton>
-                            <Button 
-                                onClick={() => {
-                                    document.getElementById('about-section').scrollIntoView({
-                                        behavior: 'smooth',
-                                    });
-                                }}
-                            >
-                                More info
-                            </Button>
+                    <FadeInX delay={0.3}>
+                        <div className='flex flex-wrap w-full justify-start items-center gap-5'>
+                            <h1 className='text-6xl text-white'>Do your</h1>
+                            <RotatingText
+                            texts={['Homework', 'Study', 'Exercise', 'Activity']}
+                            mainClassName="px-2 sm:px-2 md:px-3 bg-[#9929EA] text-5xl font-bold text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                            staggerFrom={"last"}
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-120%" }}
+                            staggerDuration={0.025}
+                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                            rotationInterval={2000}
+                            />
+                            <h1 className='text-6xl font-bold text-white'>right on time</h1>
+                            <div className='flex gap-5 mt-5'>
+                                <WhiteButton>
+                                    <Link to="/main-timer">Get Started</Link>
+                                </WhiteButton>
+                                <Button 
+                                    onClick={() => {
+                                        document.getElementById('about-section').scrollIntoView({
+                                            behavior: 'smooth',
+                                        });
+                                    }}
+                                >
+                                    More info
+                                </Button>
+                            </div>
                         </div>
-                    </div>
-                    <img src="/src/assets/TickTimeMainChar.png" alt="" className='w-125'/>
+                    </FadeInX>
+                    <img src="/public/images/TickTimeMainChar.png" alt="" className='w-125'/>
                 </div>
             </div>
 
@@ -113,15 +117,57 @@ function Homepage() {
             {/* Bagian feedback (form untuk feedback dari user) */}
             <div className="feedback relative w-full h-screen justify-center items-center bg-black flex">
                 <div className="flex justify-between items-center px-20">
-                    <div className="justify-center">
-                        <img src="/src/assets/TickTime char pointing.png" alt="" />
-                    </div>
                     <div className="flex flex-col justify-center items-center gap-5">
-                        <h1 className="text-4xl text-white">Give us some feedback</h1>
-                        <form>
-                            <input type="text" className="bg-white"/>
-                        </form>
+                        <FadeInX delay={0.1}>
+                            <h1 className="text-4xl text-white">Developer social media</h1>
+                        </FadeInX>
+                        <FadeInX delay={0.3}>
+                            <div className="flex justify-start items-center">
+                                <ul className="flex flex-col gap-3">
+                                    <li>
+                                        <a href="https://www.instagram.com/dhanupnd" target="_blank" rel="noopener noreferrer">
+                                            <div className="flex justify-start items-center gap-3">
+                                                <img src="/public/images/instagram.png" alt="" className="w-[50px]"/>
+                                                <span className='text-white'>@dhanupnd</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@dhanupnd" target="_blank" rel="noopener noreferrer">
+                                            <div className='flex justify-start items-center gap-3'>
+                                                <img src="/public/images/tiktok.png" alt="" className="w-[50px]"/>
+                                                <span className='text-white'>@dhanupnd</span>
+                                            </div>                                    
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.github.com/dhanupnd" target="_blank" rel="noopener noreferrer">
+                                            <div className='flex justify-start items-center gap-3'>
+                                                <img src="/public/images/github.png" alt="" className="w-[50px]"/>
+                                                <span className='text-white'>@dhanupnd</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:dhanupandhowo29@gmail.com" target="_blank" rel="noopener noreferrer">
+                                            <div className='flex justify-center items-center gap-3'>
+                                                <img src="/public/images/gmail.png" alt="" className="w-[50px]"/>
+                                                <span className='text-white'>dhanupandhowo29@gmail.com</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </FadeInX>
+                        
                     </div>
+                    
+                    <FadeIn delay={0.3}>
+                        <div className="justify-center">
+                            <img src="/public/images/TickTime char about.png" alt="" />
+                        </div>
+                    </FadeIn>
+                        
                 </div>
             </div>
         </>

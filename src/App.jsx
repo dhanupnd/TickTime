@@ -1,7 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Homepage from './Homepage.jsx';
-import MainTimer from './MainTimer.jsx'
-import SideBar from './SideBar.jsx';
+import Homepage from './pages/Homepage.jsx';
+import MainTimer from './pages/MainTimer.jsx';
 
 function App() {
     return (
@@ -9,7 +8,6 @@ function App() {
           <Routes>
             <Route path='/' element={<Homepage />} />
             <Route path='/main-timer' element={<MainTimer />} />
-            <Route path='/sidebar' element={<SideBar />} />
           </Routes>
         </Router>
     );

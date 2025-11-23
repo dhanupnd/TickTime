@@ -1,0 +1,25 @@
+import FadeIn from '../components/FadeIn.jsx'
+
+function About({id}) {
+    return(
+        <>
+            <div id={id} className="about relative w-full h-screen justify-center items-center bg-black flex gap-10 px-20">
+                <div className='w-full md:w-3/4 px-6 md:px-0'>
+                    <FadeIn delay={0.1}>
+                        <h1 className='text-3xl sm:text-4xl text-white font-serif'>About TickTime</h1>
+                    </FadeIn>
+                    
+                    <FadeIn delay={0.3}>
+                        <p className='text-base sm:text-xl text-white mt-5 leading-relaxed'>TickTime is a productivity application designed to help users manage their time effectively and complete tasks on schedule. 
+                            Our mission is to provide a user-friendly platform that combines task management with time tracking, enabling users to stay organized and focused throughout their day. 
+                            In TickTime, you can also customize your own notification sound. You can import some mp3 files to the application, change the  notification to the file that you imported, 
+                            then foila! your notification is now sounds exactly like you wanted.
+                        </p>
+                    </FadeIn>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default About;
